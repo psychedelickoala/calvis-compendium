@@ -26,9 +26,12 @@
 
     
     <!-- header -->
-    <header onclick="document.location='index.html'" title="Home">
-        <h1 id="spaceHeader">title</h1>
-    </header>
+    <div id="header-placeholder"></div>
+    <script>
+        $(function(){
+        $("#header-placeholder").load("header.html");
+        });
+    </script>
 
 
 <div style="overflow:auto">
@@ -46,7 +49,7 @@
     <div id="menu-placeholder"></div>
     <script>
         $(function(){
-        $("#menu-placeholder").load("statics.html#postMenu");
+        $("#menu-placeholder").load("menu.html");
         });
     </script>
 </div>
