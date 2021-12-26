@@ -1,0 +1,79 @@
+/* Place your CSS styles in this file */
+
+body {
+    font-family: "Georgia", serif;
+    background-color:white;
+    color: #382E2C;
+    text-align: justify;
+    
+
+}
+
+header {
+    padding: 30px;
+    text-align: center;
+    background-image: url('space-header.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    color:white;
+
+}
+
+h2 {
+  background-color: #897C9D;
+  color:white;
+  padding: 7px;
+  text-align:left;
+  font-size: 18px;
+}
+
+.menu {
+    float: left;
+    text-align: center;
+    width: 30%;
+}
+
+.menu a {
+  padding: 8px;
+  margin-top: 7px;
+  display: block;
+  width: 100%;
+}
+
+.main {
+  float: right;
+  width: 70%;
+  padding: 0px 20px;
+}
+
+a:link, a:visited {
+    background-color:#382E2C;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: white;
+    color:#382E2C;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Georgia", serif;
+    font-weight: normal;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .menu, .main {
+    width: 100%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}

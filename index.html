@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <!-- MathJax -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Home</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+
+    <header onclick="document.location='index.html'" title="Home">
+        <h1 id="spaceHeader">title</h1>
+    </header>
+
+
+
+<div style="overflow:auto">
+
+    
+    <div class="main" id="post0">
+        <h2> hello </h2>
+        <p>
+            gonna test some maths um we have
+            \[
+                \sum_{n=1}^{\infty} \frac{1}{n^2}=\frac{\pi ^2}{6}
+            \]
+
+            and yeah we wildin
+
+        </p>
+    </div>
+
+    <!-- get menu-->
+
+    <div id="menu-placeholder"></div>
+    <script>
+        $.get("statics.html", function(data){
+            $("#nav-placeholder").replaceWith(data);
+        });
+    </script> 
+
+</div>
+    
+        
+    </body>
+</html>

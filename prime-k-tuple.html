@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <!-- MathJax -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>prime k-tuple conjecture</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+
+    
+    <!-- header -->
+    <header onclick="document.location='index.html'" title="Home">
+        <h1 id="spaceHeader">title</h1>
+    </header>
+
+
+<div style="overflow:auto">
+
+    <div class="main" id="post0">
+        <h2> What is the prime \(k\)-tuple conjecture? </h2>
+        <p>
+            Let \(h\) denote a constant natural number, then let \(K\) be a set of constant natural numbers 
+            \(\{0, a_2, a_3, ..., a_h\}\). Let \(n\) be prime generating on K if \(\{n, n+a_2, n+a_3, ..., n+a_h\}\)
+            is a set of primes. Have \(d(N)\) return the density of primes below \(N\), and let \(d_K(N)\) return the 
+            density of prime-generating \(n\) below \(N\).
+        </p>
+        <p>
+            Hardy and Littlewood's prime \(k\)-tuple conjecture states that
+            \[d_K(N)\sim C_K\cdot d(N)^{h}\]
+            where \(C_K\) is given by the convergent product
+
+            \[\prod_{p'=2}^{\infty} \frac{1-w_K(p)\cdot p^{-1}}{\left(1-p^{-1}\right)^h},\]
+
+            indexed by prime \(p\) as indicated by the notation \(p'\). The function \(w_K(p)\) gives the number of unique elements in 
+            \(\{0, a_2\bmod{p}, a_3\bmod{p}, ..., a_h\bmod{p}\}\).
+            
+
+        </p>
+    </div>
+
+
+
+
+
+
+
+    <!-- get menu -->
+    <div id="menu-placeholder"></div>
+    <script>
+        $(function(){
+        $("#menu-placeholder").load("statics.html");
+        });
+    </script>
+</div>
+        
+    </body>
+</html>
