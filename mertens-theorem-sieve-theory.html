@@ -11,7 +11,7 @@
         </script>
         
         <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -42,9 +42,12 @@
 
 
     <!-- get menu -->
+    <!-- get menu -->
     <div id="menu-placeholder"></div>
     <script>
-        ("#menu-placeholder").load("statics.html");
+        $(function(){
+        $("#menu-placeholder").load("statics.html#postMenu");
+        });
     </script>
 </div>
         
