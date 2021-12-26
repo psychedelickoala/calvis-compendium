@@ -10,7 +10,8 @@
             src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -47,14 +48,13 @@
 
     <!-- get menu-->
     
-    <? php include 'statics.php'; ?>
-
+    <!-- get menu -->
     <div id="menu-placeholder"></div>
     <script>
-        $.get("statics.html", function(data){
-            $("#nav-placeholder").replaceWith(data);
+        $(function(){
+        $("#menu-placeholder").load("statics.html");
         });
-    </script> 
+    </script>
 
 </div>
     
