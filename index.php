@@ -46,6 +46,8 @@
     </div>
 
     <!-- get menu-->
+    
+    <? php include 'statics.php'; ?>
 
     <div id="menu-placeholder"></div>
     <script>
