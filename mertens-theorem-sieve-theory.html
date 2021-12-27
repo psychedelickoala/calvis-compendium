@@ -85,10 +85,17 @@
             \(\prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right)\) is an <em>overestimation</em> of the density of primes below \(N\).
         </p>
         <p>
-            Let \(\tau\) and \(\upsilon\) be the greatest functions on \(N\) such that:
+            Let \(\tau\) and \(\upsilon\) be the greatest functions on \(N\) below \(\sqrt{N}\) that satisfy, respectively:
             \[
-                \prod_{p'=2}^{\tau}
+                \prod_{p'=2}^{\tau(N)}\left(1-\frac{1}{p}\right)\sim\prod_{p'=2}^{\tau(N)}R_p(N)
             \]
+        </p>
+        <p>
+            \[
+                \forall p'\le\upsilon(N), 1-\frac{1}{p} \sim R_p(N).
+            \]
+            While Mertens' theorem implies \(\tau(N) &lt \sqrt(N)\), it is still possible that \(\upsilon(N)=\sqrt(N)\). For example, suppose that for each \(p'\le\sqrt{N}\),
+            \(R_p(N)\sim e^{\gamma / \pi(\sqrt(N))} \left(1-\frac{1}{p}\right)\).
         </p>
     </div>
 
