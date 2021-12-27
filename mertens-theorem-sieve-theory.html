@@ -37,14 +37,22 @@
 <div style="overflow:auto">
 
     <div class="main" id="post0">
-        <h2> Merten's theorem and sieve theory </h2>
+        <h2> Mertens' theorem and sieve theory </h2>
         <p>
-            hello
+            Mertens' third theorem states that
+            \[\lim_{N\to\infty}\ln{N}\prod_{p'=2}^{N}\left(1-\frac{1}{p}\right)=e^{-\gamma},\]
+            and by the Prime Number Theorem, the density of primes below \(N\), denoted \(d(N)\), has asymptotic behaviour
+            \[d(N)\sim\frac{1}{\ln{N}};\]
+            then by the transitive property, it is known that
+            \[d(N)\sim e^{\gamma}\prod_{p'=2}^{N}\left(1-\frac{1}{p}\right).\]
+            
+        </p>
+        <p>Consider the natural numbers from \(1\) to \(N\) inclusive. Removing all multiples of each \(p\) where \(p\le \sqrt{N}\) leaves only primes remaining.
+            
         </p>
     </div>
 
 
-    <!-- get menu -->
     <!-- get menu -->
     <div id="menu-placeholder"></div>
     <script>
