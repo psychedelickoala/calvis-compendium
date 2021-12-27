@@ -49,7 +49,7 @@
         </p>
         <p>Consider the natural numbers from \(1\) to \(N\) inclusive. Removing all multiples of each prime \(p\) for which \(2 \le p\le \sqrt{N}\) leaves only primes remaining.
             Note that \(1\) is considered prime. Let \(R_p(N)\) return the ratio
-            \[\frac{\mid\{n\text{ s.t. } n\le N \land \forall k'\le p, k\not\mid n\}\mid }{\\mid{n\text{ s.t. } n\le N \land \forall k' <  p, k\not\mid n\}\mid };\]
+            \[\frac{\mid\{n\text{ s.t. } n\le N \land \forall k'\le p, k\not\mid n\}\mid }{\\mid{n\text{ s.t. } n\le N \land \forall k' &lt p, k\not\mid n\}\mid };\]
             
             then the product \(\prod_{p'=2}^{\sqrt{N}}R_p(N)\) is less than \(d(N)\). This algorithm removes primes below \(\sqrt{N}\), as they are multiples of themselves,
             but leaves all other primes below \(N\). Then the prime number theorem implies that as \(N\) tends to \(\infty\), almost all primes remain, so that
