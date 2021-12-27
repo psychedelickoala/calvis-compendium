@@ -47,7 +47,8 @@
             \[d(N)\sim e^{\gamma}\prod_{p'=2}^{N}\left(1-\frac{1}{p}\right).\]
             
         </p>
-        <p>Consider the natural numbers from \(1\) to \(N\) inclusive. Removing all multiples of each prime \(p\) for which \(2 \le p\le \sqrt{N}\) leaves only primes remaining.
+        <p>
+            Consider the natural numbers from \(1\) to \(N\) inclusive. Removing all multiples of each prime \(p\) for which \(2 \le p\le \sqrt{N}\) leaves only primes remaining.
             Note that \(1\) is considered prime. Let \(R_p(N)\) return the ratio
             \[\frac{\mid \{ n \text{ s.t. } n\le N \land \forall k'\le p, k\not\mid n\} \mid}{\mid\{n\text{ s.t. } n\le N \land \forall k' &lt p, k\not\mid n\}\mid };\]
             
@@ -56,6 +57,9 @@
             \[
                    \prod_{p'=2}^{\sqrt{N}} R_p(N) \sim d(N)      
             .\]
+        </p>
+        <p>
+            It seems reasonable to estimate that for each \(p\), \(R_p(N)
         </p>
     </div>
 
