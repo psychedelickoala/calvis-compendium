@@ -49,8 +49,10 @@
         </p>
         <p>Consider the natural numbers from \(1\) to \(N\) inclusive. Removing all multiples of each prime \(p\) for which \(2 \le p\le \sqrt{N}\) leaves only primes remaining.
             Note that \(1\) is considered prime. Let \(R_p(N)\) return the ratio:
-            \[\frac{\hash n\le N \text{ s.t. } \forall k'\le p, k\not\mid n}
-                   {\hash n\le N \text{ s.t. } \forall k'< p, k\not\mid n}\]
+            \[
+                \frac{\{n\text{ s.t. } n\le N \and \text{ s.t. } \forall k'\le p, k\not\mid n\} }
+                     {\{n\text{ s.t. } n\le N \and \text{ s.t. } \forall k' <  p, k\not\mid n\} }
+            \]
         </p>
     </div>
 
