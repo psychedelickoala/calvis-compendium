@@ -48,18 +48,28 @@
             
         </p>
         <p>
-            Consider the natural numbers from \(1\) to \(N\) inclusive. Removing all multiples of each prime \(p\) for which \(2 \le p\le \sqrt{N}\) leaves only primes remaining.
+            Consider the natural numbers from \(1\) to \(N\) inclusive. 
+            Removing all multiples of each prime \(p\) for which \(2 \le p\le \sqrt{N}\) leaves only primes remaining.
             Note that \(1\) is considered prime. Let \(R_p(N)\) return the ratio
-            \[\frac{\mid\{ n \text{ s.t. } n\le N \land \forall k'\le p, k\not\mid n\}\mid}{\mid\{n\text{ s.t. } n\le N \land \forall k' &lt p, k\not\mid n\}\mid};\]
+            
+            \[
+                \frac{\mid\{ n \text{ s.t. } n\le N \land \forall k'\le p, k\not\mid n\}\mid}{\mid\{n\text{ s.t. } n\le N \land \forall k' &lt p, k\not\mid n\}\mid};
+            \]
             
             then the product \(\prod_{p'=2}^{\sqrt{N}}R_p(N)\) is less than \(d(N)\). This algorithm removes primes below \(\sqrt{N}\), as they are multiples of themselves,
-            but leaves all other primes below \(N\). Then the prime number theorem implies that as \(N\) tends to \(\infty\), almost all primes remain, so that
+            but leaves all other primes below \(N\). 
+            Then the prime number theorem implies that as \(N\) tends to \(\infty\), almost all primes remain, so that
             \[
-                   \prod_{p'=2}^{\sqrt{N}} R_p(N) \sim d(N)      
-            .\]
+                \prod_{p'=2}^{\sqrt{N}} R_p(N) \sim d(N).
+            \]
         </p>
         <p>
-            It seems reasonable to estimate that for each \(p\), \(R_p(N)\sim 1-\frac{1}{p}
+            It seems reasonable to estimate that as \(N\to\infty\), 
+            \[
+                \prod_{p'=2}^{\sqrt{N}}R_p(N)\sim \prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right);
+            \] 
+            this is heuristically justified by the fact that for distinct primes \(k_1\) and \(k_2\),
+            \(k_1\not\mid n\) and \(k_2\not\mid n\) are independent events with respective probabilities of approximately \(1-\frac{1}{k_1}\) and \(1-\frac{1}{k_2}\).
         </p>
     </div>
 
