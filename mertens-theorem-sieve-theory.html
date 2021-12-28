@@ -104,7 +104,7 @@
             then there must exist some unbounded function \(P(N)\) such that \(P(N\) is prime and \(R_{P(N)}(N)\) approaches some nonnegative number below \(1\).
         </p>
         <p>
-            <strong>Author's Note: </strong> My reasoning for imposing an upper bound of \(\sqrt{N}\) on \(\tau\) and \(\upsilon\) is as follows. Suppose \(\tau(N)\) and \(\upsilon(N)\) were not bounded from above by \(\sqrt{N}\). Then one might consider the case in which
+            <strong>Remark. </strong> My reasoning for imposing an upper bound of \(\sqrt{N}\) on \(\tau\) and \(\upsilon\) is as follows. Suppose \(\tau(N)\) and \(\upsilon(N)\) were not bounded from above by \(\sqrt{N}\). Then one might consider the case in which
             \(\tau(N):=N^{\exp(-\gamma)}\), as it implies:
             \[
                 \prod_{p'=2}^{\tau(N)}\left(1-\frac{1}{p}\right) \sim \frac{\exp(-\gamma)}{\exp(-\gamma)\ln(N)} \sim \prod_{p'=2}^{\sqrt{N}}R_p(N);
@@ -112,15 +112,16 @@
             and since \(R_p(N) = 1\) for \(p &gt \sqrt{N}\), \(\tau(N):=N^{\exp(-\gamma)}\) satisfies \(\prod_{p'=2}^{\tau(N)}\left(1-\frac{1}{p}\right)\sim\prod_{p'=2}^{\tau(N)}R_p(N)\).
         </p>
         <hr>
-        <p>
+        <p id="generalForm">
             A more general form of Mertens' third theorem can be extrapolated using the identity:
             \[
-                \prod_{p'>h}^{x}\left(1-\frac{h}{p}\right) = C \prod_{p'=2}^{x}\left(1-\frac{1}{p}\right)^h,
+                \prod_{p'&gt h}^{x}\left(1-\frac{h}{p}\right) \sim C \prod_{p'=2}^{x}\left(1-\frac{1}{p}\right)^h,
             \]
             where \(C\) and \(h\) are constants. It follows that
             \[
-                FWOG
+                 \prod_{p'&gt h}^{x}\left(1-\frac{h}{p}\right) \sim \frac{C e^{-h\gamma}}{\left(\ln{x}\right^h},
             \]
+            which is relevant to the <u onclick="document.location='prime-k-tuple.html'">prime k-tuple conjecture</u>.
         </p>
         
     </div>
