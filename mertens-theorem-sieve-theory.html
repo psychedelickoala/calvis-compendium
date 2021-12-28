@@ -95,8 +95,17 @@
                 \forall p'\le\upsilon(N), 1-\frac{1}{p} \sim R_p(N).
             \]
             While Mertens' theorem implies \(\tau(N) &lt \sqrt{N}\), it is still possible that \(\upsilon(N)=\sqrt{N}\). For example, suppose that for each \(p'\le\sqrt{N}\),
-            \(R_p(N)\sim e^{\gamma / \pi(\sqrt{N})} \left(1-\frac{1}{p}\right)\). Then, since \(e^{\gamma / \pi(\sqrt{N})}\to 1\), \(1-\frac{1}{p} \sim R_p(N)\) for all \(p'\le\sqrt{N}\)
-            and consequently \(\upsilon(N)=\sqrt{N}\). Note that if \(\upsilon(N)=\sqrt{N}\), then \(\tau(N)&lt\sqrt{N}-c\) for any arbitrary constant \(c\).
+            \(R_p(N)\sim \exp({\frac{\gamma}{\pi(\sqrt{N})}}) \left(1-\frac{1}{p}\right)\). Then, since \(e^{\gamma / \pi(\sqrt{N})}\to 1\), \(1-\frac{1}{p} \sim R_p(N)\) for all \(p'\le\sqrt{N}\)
+            and consequently \(\upsilon(N)=\sqrt{N}\). Note that if \(\upsilon(N)=\sqrt{N}\), then \(\tau(N)&lt\sqrt{N}-c\) for any positive constant \(c\).
+        </p>
+        <p>
+            I conjecture that \(\upsilon(N)=\sqrt{N}\). Suppose \(\tau(N)\) and \(\upsilon(N)\) were not bounded from above by \(\sqrt(N)\). Then one might consider the case in which
+            \(\tau(N):=N^{\exp(-gamma)}\), as it implies:
+            \[
+                \prod_{p'=2}^{\tau(N)}\left(1-\frac{1}{p}\right) \sim \frac{\exp(-\gamma)}{\exp(-\gamma)\ln(N)} \sim \prod_{p'=2}^{\sqrt{N}}R_p(N);
+            \]
+            and since \(R_p(N) = 1\) for \(p &gt \sqrt{N}\), \(\tau(N):=N^{\exp(-gamma)}\) satisfies \(\prod_{p'=2}^{\tau(N)}\left(1-\frac{1}{p}\right)\sim\prod_{p'=2}^{\tau(N)}R_p(N)\).
+            
         </p>
     </div>
 
