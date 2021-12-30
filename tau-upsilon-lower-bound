@@ -1,1 +1,78 @@
+<!doctype html>
 
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+        <!-- MathJax -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Limits of sieving methods</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+
+    
+    <!-- header -->
+    <div id="header-placeholder"></div>
+    <script>
+        $(function(){
+        $("#header-placeholder").load("header.html");
+        });
+    </script>
+
+
+<div style="overflow:auto">
+
+    <div class="main" id="post0">
+        <h2> The limits of sieving methods </h2>
+        <p>
+            Most of the following mathematics was developed in response to Hardy and Littlewood's prime k-tuple conjecture.
+            The definition of the conjecture that I had been using can be found <u onclick="document.location='prime-k-tuple.html'">here</u>.
+            In this post I aim to provide lower bounds for the functions \(\tau\) and \(\upsilon\). Let \(d(N)\) denote the density of primes below \(N\). The
+            following quotes are from my <u onclick="document.location='mertens-theorem-sieve-theory.html'">page on Mertens' Theorem</u>.
+            
+            <blockquote cite="mertens-theorem-sieve-theory.html">
+            Consider the natural numbers from \(1\) to \(N\) inclusive. 
+            Removing all multiples of each prime \(p\) for which \(2 \le p\le \sqrt{N}\) leaves only primes remaining.
+            Note that \(1\) is considered prime. Let \(R_p(N)\) return the ratio
+            
+            \[
+                \frac{\mid\{ n \text{ s.t. } n\le N \land \forall k'\le p, k\not\mid n\}\mid}{\mid\{n\text{ s.t. } n\le N \land \forall k' &lt p, k\not\mid n\}\mid};
+            \]
+            
+            then the product \(\prod_{p'=2}^{\sqrt{N}}R_p(N)\) is less than \(d(N)\). This algorithm removes primes below \(\sqrt{N}\), as they are multiples of themselves,
+            but leaves all other primes below \(N\). 
+            Then the prime number theorem implies that \(\pi(\sqrt{N})=o(\pi(N))\), so that
+            \[
+                \prod_{p'=2}^{\sqrt{N}} R_p(N) \sim d(N).
+            \]
+            </blockquote>
+        </p>
+        
+    </div>
+
+
+    <!-- get menu -->
+    <div id="menu-placeholder"></div>
+    <script>
+        $(function(){
+        $("#menu-placeholder").load("menu.html");
+        });
+    </script>
+</div>
+        
+    </body>
+</html>
