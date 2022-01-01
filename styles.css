@@ -12,7 +12,7 @@ body {
 header {
     padding: 30px;
     text-align: center;
-    background-image: url('space-header.jpg');
+    background-image: url('media/space-header.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
