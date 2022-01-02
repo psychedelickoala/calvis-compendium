@@ -46,14 +46,29 @@
             Your browser doesn't support this video. Sorry!
             </video>
         <p>
-            For each prime \(p\), let <strong>\(p\)-primes</strong> be natural numbers \(n\) such that:
-            \[\forall k'\le p, k\not\mid n;\]
-            and let <strong>\(p\)-mines</strong> be natural \(n\) satisfying:
-            \[\forall k' &lt p, k\not\mid n \land p\mid n\].<br><br>
+            For each prime \(p\), let '\(p\)-primes' be natural numbers \(n\) such that:
+            \begin{equation} \label{def1}
+            \forall k'\le p, k\not\mid n;
+            \end{equation}
+            and let '\(p\)-mines' be natural \(n\) satisfying:
+            \begin{equation} \label{def2}
+            \forall k' &lt p, k\not\mid n \land p\mid n.
+            \end{equation}
+            <br><br>
             
             To discuss infinite descent and explain the above animation, I need to express the highest prime below \(p\) and the lowest prime above \(p\). These can
             be written as \(\lhd{p}\) and \({p}\rhd\) respectively. Then, the second highest prime below \(p\) is \(\lhd\lhd{p}\), and the third lowest prime above \(p\)
-            is \(p\rhd\rhd\rhd\); but these can be shortened to \(\lhd^2{p}\) and \({p}\rhd^2\).
+            is \(p\rhd\rhd\rhd\); but these can be shortened to \(\lhd^2{p}\) and \({p}\rhd^3\). <br><br>
+            
+            It is clear from the definitions that all \(p\)-primes are \(\lhd{p}\)-primes and not \(p\)-mines.
+            The animation asserts that the number of \(p\)-mines below N is equal to the number of \(\lhd{p}\)-primes below \(N/p\). This can also be derived from 
+            equations \ref{def1} and \ref{def2}; each \(\lhd{p}\)-prime below \(N/p\) will, when multiplied by \(p\), yield a \(p\)-mine; conversely each \(p\)-mine, 
+            when divided by \(p\), will remain indivisible by all \(k'\le \lhd{p}\) and thus becomes a \(\lhd{p}\)-prime. <br><br>
+            
+            If \(n\) is a \(p\)-prime where \(n\le N\) and \(p\rhd &gt \sqrt{N}\), then \(n\) is prime. The lowest \(p\)-mine other than \(p\) is always \(p^2\),
+            as lower multiples of \(p\) must be divisible by smaller primes. That is, all \(k'&gt \sqrt{N}\) have no composite mines below \(N\), so it is enough to remove
+            \(k\)-mines for \(k' \le \sqrt{N}\) to leave only primes remaining. By definition, removing \(k\)-mines for \(k' \le \sqrt{N}\) leaves only \(p\)-primes remaining 
+            if \(p\) is the highest prime satisfying \(p\le\sqrt{N}\). In the animation above, \(N=65\) and all the \(7\)-primes below \(N\) are prime.
             
         </p>
         
