@@ -15,7 +15,7 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Infinite descent</title>
+        <title>Prime descent</title>
 
         <!-- Load external CSS styles -->
         <link rel="stylesheet" href="styles.css">
@@ -37,7 +37,7 @@
 <div style="overflow:auto">
 
     <div class="main" id="post0">
-        <h2>Infinite descent in prime sieves</h2>
+        <h2>Descent in prime sieves</h2>
         <p>
             The following animation was made with the <code onclick="document.location='https://www.manim.community'">manim</code> library for Python.
         </p>
@@ -56,7 +56,7 @@
             \end{equation}
             <br><br>
             
-            To discuss infinite descent and explain the above animation, I need to express the highest prime below \(p\) and the lowest prime above \(p\). These can
+            To discuss descent and explain the above animation, I need to express the highest prime below \(p\) and the lowest prime above \(p\). These can
             be written as \(\lhd{p}\) and \({p}\rhd\) respectively. Then, the second highest prime below \(p\) is \(\lhd\lhd{p}\), and the third lowest prime above \(p\)
             is \(p\rhd\rhd\rhd\); but these can be shortened to \(\lhd^2{p}\) and \({p}\rhd^3\). <br><br>
 
@@ -74,9 +74,16 @@
             
             Consequently the number of \(p\)-primes less than or equal to \(N\) can be expressed in terms of \(\lhd{p}\)-primes as
             <center>
-            \(\text{&#35} p\)-mines\(\le N =\text{&#35}\lhd{p}\)-primes\(\le N - \text{&#35} \lhd{p}\)-primes}\(\displaystyle\le \left\lfloor\frac{1}{p}\cdot N\right\rfloor\).
+            \(\text{&#35 } p\)-mines \(\le N =\text{&#35}\lhd{p}\)-primes \(\le N - \text{&#35} \lhd{p}\)-primes \(\displaystyle\le \left\lfloor\frac{1}{p}\cdot N\right\rfloor\).
             </center>
+            To conduct the descent, one represents the number of \(p\)-primes below \(N\) as the difference between two groups of \(\lhd{p}\)-primes; then represents each of those 
+            groups as the difference between two groups of \(\lhd^2{p}\)-primes, and so on until the number of \(p\)-primes below \(N\) is presented solely in terms of \(2\)-primes.
+            \(2\)-primes, being natural numbers not divisible by \(2\), are equivalent to odd numbers; to find the number of odds from \(1\) to \(n\) inclusive, calculate 
+            \(\left\lceil\frac{1}{2}\cdot n\right\rceil\). The tree diagram below shows this descent for \(7\)-primes below \(N\), as in the animation. 
         </p>
+        <img src="media/prime-tree.png" style="width:100%;" alt="Tree diagram">
+        <figcaption>Figure 1. Tree diagram to demonstrate descent.</figcaption>
+        
         
     </div>
 
