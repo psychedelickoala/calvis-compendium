@@ -31,12 +31,6 @@
 
     </head>
     <body>  
-        \(
-            \newcommand{\lf}{\left\lfloor}
-            \newcommand{\rf}{\right\rfloor}
-            \newcommand{\lc}{\left\lceil}
-            \newcommand{\rc}{\right\rceil}
-        \)
     <!-- header -->
     <div id="header-placeholder"></div>
     <script>
@@ -49,6 +43,12 @@
 <div style="overflow:auto">
 
     <div class="main" id="post0">
+        \(
+            \newcommand{\lf}{\left\lfloor}
+            \newcommand{\rf}{\right\rfloor}
+            \newcommand{\lc}{\left\lceil}
+            \newcommand{\rc}{\right\rceil}
+        \)
         <h2>Descent in prime sieves</h2>
         <p>
             The following animation was made with the <code onclick="document.location='https://www.manim.community'">manim</code> library for Python.
@@ -70,13 +70,13 @@
             
             To discuss descent and explain the above animation, I need to express the highest prime below \(p\) and the lowest prime above \(p\). These can
             be written as \(\lhd{p}\) and \({p}\rhd\) respectively. Then, the second highest prime below \(p\) is \(\lhd\lhd{p}\), and the third lowest prime above \(p\)
-            is \(p\rhd\rhd\rhd\); but these can be shortened to \(\lhd^2{p}\) and \({p}\rhd^3\). <br><br>
+            is \(p\rhd\rhd\rhd\); these notations can be shortened to \(\lhd^2{p}\) and \({p}\rhd^3\). <br><br>
 
             
             If \(n\) is a \(p\)-prime where \(n\le N\) and \(p\rhd &gt \sqrt{N}\), then \(n\) is prime. The lowest \(p\)-mine other than \(p\) is always \(p^2\),
             as lower multiples of \(p\) must be divisible by smaller primes. That is, all \(k'&gt \sqrt{N}\) have no composite mines below \(N\), so it is enough to remove
-            \(k\)-mines for \(k' \le \sqrt{N}\) to leave only primes remaining. By definition, removing \(k\)-mines for \(k' \le \sqrt{N}\) leaves only \(p\)-primes remaining 
-            if \(p\) is the highest prime satisfying \(p\le\sqrt{N}\). In the animation above, \(N=65\) and all the \(7\)-primes below \(N\) are prime. <br><br>
+            \(k\)-mines for \(k' \le \sqrt{N}\) to leave only primes remaining. 
+            In the animation above, \(N=65\) and all the \(7\)-primes below \(N\) are prime. <br><br>
            
             
             It is clear from the definitions that all \(p\)-primes are \(\lhd{p}\)-primes and not \(p\)-mines.
@@ -89,18 +89,20 @@
             \(\text{&#35 } p\)-mines \(\le N =\text{&#35}\lhd{p}\)-primes \(\le N - \text{&#35} \lhd{p}\)-primes \(\displaystyle\le \left\lfloor\frac{1}{p}\cdot N\right\rfloor\).
             </center>
             To conduct the descent, one represents the number of \(p\)-primes below \(N\) as the difference between two groups of \(\lhd{p}\)-primes; then represents each of those 
-            groups as the difference between two groups of \(\lhd^2{p}\)-primes, and so on until the number of \(p\)-primes below \(N\) is presented solely in terms of \(2\)-primes.
-            \(2\)-primes, being natural numbers not divisible by \(2\), are equivalent to odd numbers; to find the number of odds from \(1\) to \(n\) inclusive, calculate 
-            \(\left\lceil\frac{1}{2}\cdot n\right\rceil\). The tree diagram below shows this descent for \(7\)-primes below \(N\), as in the animation. 
+            groups as the difference between two groups of \(\lhd^2{p}\)-primes, and so on until the number of \(p\)-primes below \(N\) is presented solely in terms of integers.
+            To find the number of integers below each bound \(x\), simply floor \(x\).
+            The tree diagram below shows how this descent can calculate the number of \(7\)-primes below \(65\), which is the example used in the animation. 
         </p>
         <img src="media/prime-tree.jpg" style="width:100%;" alt="Tree diagram">
         <figcaption>Figure 1. Tree diagram to demonstrate descent.</figcaption>
         <p>
-            In the above diagram, each parent node is equal to the sum of all its children.
-            This means that the sum of the elements in a tier is the same for each tier. Then summing all sixteen elements in the fifth tier of the tree yields the number 
+            In the above diagram, each parent node is equal to the sum of its two children.
+            This means that the sum of all elements in a tier is the same for each tier. Then summing all sixteen elements in the fifth tier of the tree yields the number 
             of \(7\)-primes below \(65\); that is,
-            \[65-32-21+10-13+6+4-2-9+4+3-1+1-0-0+0=15\]
-            which is what the animation shows as well.
+            <center>
+            \(\text{&#35 } p\)-mines \(\le N =65-32-21+10-13+6+4-2-9+4+3-1+1-0-0+0=15.\)
+            </center>
+            This is confirmed by the animation; at its end, there are \(15\) rectangles remaining.
         </p>
 
     </div>
