@@ -29,7 +29,7 @@
 <div style="overflow:auto">
 
     <div class="main" id="post0">
-        \(\newcommand{\lf}{\left\lfloor}\newcommand{\rf}{\right\rfloor}\)
+        \(\newcommand{\lf}{\left\lfloor}\newcommand{\rf}{\right\rfloor}\newcommand{\sign}{\text{sign}}\)
         <h2>Descent in prime sieves</h2>
         <p>
             The following animation was made with the <code onclick="document.location='https://www.manim.community'">manim</code> library for Python.
@@ -88,14 +88,19 @@
         <p>
             This is confirmed by the animation; at its end, there are \(15\) rectangles remaining.
         </p>
+        
+        
+        
         <hr>
+        
+        
+        
+        
         <h3> An algebraic expression for &#35 p-mines &#8804 N </h3>
         <p>
             Firstly, note that floored terms are only ever multiplied by unit fractions.
             This renders the nested floors in the final tier of the tree diagram redundant; only the outermost brackets are needed.
-            Next, we replace the floor brackets with truncation parentheses \([\) \(]\) and move the negative signs inside these brackets. <br><br>
-            
-            Within each bracket, \(65\) now has a signed coefficient. Consider the expansion
+            Within each bracket, \(65\) now has a coefficient; outside the bracket, it has a sign. Consider the expansion
         </p>
         <div class='formula'>
             \[\prod_{k'=2}^{7}\left(1-\frac{1}{k}\right) = 1 
@@ -108,15 +113,37 @@
             \]
         </div>
         <p>
-            of which each term is a signed coefficient of \(65\), and each coefficient is a term. In the general case of \(\text{&#35 } p\)-mines \(\le N\), each term in
-            \begin{equation} \tag{3}
-            \prod_{k'=2}^{p}\left(1-\frac{1}{p}\right)
-            \end{equation}
+            of which each term is a coefficient of \(65\), with its corresponding sign existing outside the delimiters. 
+            In the general case of \(\text{&#35 } p\)-mines \(\le N\), each term in
+            \[\prod_{k'=2}^{p}\left(1-\frac{1}{p}\right)\]
             is a coefficient of \(N\).
             Let each of these terms be indexed by \(r\) so that
-            \[\sum_r r=\prod_{k'=2}^{p}\left(1-\frac{1}{k}\right),\]
-            then the number of \(p\)-mines \(\le N\) is given by \(\sum_r [rN]\).
+            \begin{equation} \tag{3}
+                \sum_r r=\prod_{k'=2}^{p}\left(1-\frac{1}{k}\right),
+            \end{equation}
+            then the number of \(p\)-mines \(\le N\) is given by \(\sum_r \sign{r} \lf \mid r\mid N\rf\). Using the definition \(\lf x\rf = x - \{x\}\), where
+            \(\{x\}\) denotes the fractional part of \(x\), we have:
         </p>
+        <div class='formula'>
+            \begin{align}
+                \sum_r \sign{r} \lf \mid r\mid \cdot N\rf &= \sum_r rN - \sum_r \sign(r)\{\mid r\mid \cdot N\}\\
+                                                          &= N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\{\mid r\mid \cdot N\}
+            \end{align}
+        </div>
+        <p>
+            Then, using the Fourier series expansion
+        </p>
+        <div class='formula'>
+            \[
+                \{x\} = \frac{1}{2} - \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin{2\pi tx}}{t},
+            \]
+        </div>
+        <p>
+            the formula can be more analytically expressed as
+        </p>
+        <div class='formula'>
+            N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\left(\frac{1}{2} - \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin{2\pi t\mid r\mid \cdot N}}{t}\right)
+        </div>
     </div>
 
 
