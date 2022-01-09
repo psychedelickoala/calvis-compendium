@@ -98,8 +98,10 @@
         
         <h3> An algebraic expression for &#35 p-mines &#8804 N </h3>
         <p>
+            Let \(\rho(p, N)\) be a function returning the number of \(p\)-mines less than or equal to \(N\). The aim of this section is to find an algebraic expression for \(\rho\). To begin, consider \(\rho(7, 65)\) as a specific case; regard it as the sum of all elements of the fifth tier of the tree diagram in Figure 1.
             Firstly, note that floored terms are only ever multiplied by unit fractions.
             This renders the nested floors in the final tier of the tree diagram redundant; only the outermost brackets are needed.
+            
             Within each bracket, \(65\) now has a coefficient; outside the bracket, it has a sign. Consider the expansion
         </p>
         <div class='formula'>
@@ -121,7 +123,7 @@
             \begin{equation} \tag{3}
                 \sum_r r=\prod_{k'=2}^{p}\left(1-\frac{1}{k}\right),
             \end{equation}
-            then the number of \(p\)-mines \(\le N\) is given by \(\sum_r \sign(r) \lf |r|\cdot N\rf\). Using the definition \(\lf x\rf = x - \{x\}\), where
+            then the \(\rho(p, N)\) is given by \(\sum_r \sign(r) \lf |r|\cdot N\rf\). Using the definition \(\lf x\rf = x - \{x\}\), where
             \(\{x\}\) denotes the fractional part of \(x\), we have:
         </p>
         <div class='formula'>
@@ -143,16 +145,16 @@
         </p>
         <div class='formula'>
             \begin{align}
-                &N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\left(\frac{1}{2} - \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}\right)\\
+                \rho(p,N)=&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\left(\frac{1}{2} - \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}\right)\\
                =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \frac{1}{2}\cdot\sum_r \sign(r) + \frac{1}{\pi}\cdot\sum_r \sign(r)\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}.
             \end{align}
         </div>
         <p>
-            There are equal counts of positive and negative \(r\), hence \(\sum_r \sign(r)=0\). Then the expression becomes
+            There are equal counts of positive and negative \(r\), hence \(\sum_r \sign(r)=0\). Then the equation becomes
         </p>
         <div class='formula'>
             \begin{align}
-                &N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \sum_r \sign(r)\frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}\\
+                \rho(p, N)=&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_r \sign(r)\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}\\
                =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_r \sign(r)\frac{\sin(2\pi tN\cdot|r|)}{t}.
             \end{align}
         </div>
@@ -169,7 +171,7 @@
         </p>
         <div class='formula'>
             \begin{align}
-               &N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_r \sign(r) \sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN\cdot|r|)^{2n+1}}{t\cdot(2n+1)!}\\
+               \rho(p, N)=&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_r \sign(r) \sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN\cdot|r|)^{2n+1}}{t\cdot(2n+1)!}\\
               =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN)^{2n+1}}{t\cdot(2n+1)!} \sum_r \sign(r)\cdot |r|^{2n+1}\\
               =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN)^{2n+1}}{t\cdot(2n+1)!}\cdot \prod_{k'=2}^p \left(1-\frac{1}{k^{2n+1}}\right)
             \end{align}
