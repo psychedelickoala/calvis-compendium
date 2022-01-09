@@ -155,10 +155,13 @@
             In the above diagram, each parent node is equal to the sum of its two children.
             This means that the sum of all elements in a tier is the same for each tier. Then summing all sixteen elements in the fifth tier of the tree yields the number 
             of \(7\)-primes below \(65\); that is,
+        </p>
+        <div class='formula'>
             <center>
             \(\text{&#35 } 7\)-mines \(\le 65 =65-32-21+10-13+6+4-2-9+4+3-1+1-0-0+0=15.\)
             </center>
-            <br>
+        </div>
+        <p>
             This is confirmed by the animation; at its end, there are \(15\) rectangles remaining.
         </p>
         <hr>
@@ -169,6 +172,8 @@
             Next, we replace the floor brackets with truncation parentheses \([\) \(]\) and move the negative signs inside these brackets. <br><br>
             
             Within each bracket, \(65\) now has a signed coefficient. Consider the expansion
+        </p>
+        <div class='formula'>
             \[\prod_{k'=2}^{7}\left(1-\frac{1}{k}\right) = 1 
             - \frac{1}{2} - \frac{1}{3} - \frac{1}{5} - \frac{1}{7}
             + \frac{1}{2}\cdot\frac{1}{3} + \frac{1}{2}\cdot\frac{1}{5} + \frac{1}{2}\cdot\frac{1}{7}
@@ -177,6 +182,8 @@
             - \frac{1}{2}\cdot\frac{1}{5}\cdot\frac{1}{7} - \frac{1}{3}\cdot\frac{1}{5}\cdot\frac{1}{7}
             + \frac{1}{2}\cdot\frac{1}{3}\cdot\frac{1}{5}\cdot\frac{1}{7};
             \]
+        </div>
+        <p>
             of which each term is a signed coefficient of \(65\), and each coefficient is a term. In the general case of \(\text{&#35 } p\)-mines \(\le N\), each term in
             \begin{equation} \tag{3}
             \prod_{k'=2}^{p}\left(1-\frac{1}{p}\right)
