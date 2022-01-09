@@ -121,13 +121,13 @@
             \begin{equation} \tag{3}
                 \sum_r r=\prod_{k'=2}^{p}\left(1-\frac{1}{k}\right),
             \end{equation}
-            then the number of \(p\)-mines \(\le N\) is given by \(\sum_r \sign{r} \lf \mid r\mid N\rf\). Using the definition \(\lf x\rf = x - \{x\}\), where
+            then the number of \(p\)-mines \(\le N\) is given by \(\sum_r \sign(r) \lf |r|\cdot N\rf\). Using the definition \(\lf x\rf = x - \{x\}\), where
             \(\{x\}\) denotes the fractional part of \(x\), we have:
         </p>
         <div class='formula'>
             \begin{align}
-                \sum_r \sign{r} \lf \mid r\mid \cdot N\rf &= \sum_r rN - \sum_r \sign(r)\{\mid r\mid \cdot N\}\\
-                                                          &= N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\{\mid r\mid \cdot N\}
+                \sum_r \sign(r) \lf |r| \cdot N\rf &= \sum_r rN - \sum_r \sign(r)\{|r| \cdot N\}\\
+                                                          &= N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\{|r| \cdot N\}
             \end{align}
         </div>
         <p>
@@ -135,14 +135,26 @@
         </p>
         <div class='formula'>
             \[
-                \{x\} = \frac{1}{2} - \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin{2\pi tx}}{t},
+                \{x\} = \frac{1}{2} - \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin(2\pi tx)}{t},
             \]
         </div>
         <p>
             the formula can be more analytically expressed as
         </p>
         <div class='formula'>
-            N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\left(\frac{1}{2} - \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin{2\pi t\mid r\mid \cdot N}}{t}\right)
+            \begin{align}
+                &N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\left(\frac{1}{2} - \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin{2\pi tN\cdot|r|)}{t}\right)\\
+               =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \frac{1}{2}\cdot\sum_r \sign(r) + \sum_r \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin{2\pi tN\cdot|r|)}{t}\right).
+            \end{align}
+        </div>
+        <p>
+            There are equal counts of positive and negative \(r\), hence \(\sum_r \sign(r)=0\). Then the expression becomes
+        </p>
+        <div class='formula'>
+            \begin{align}
+                &N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \sum_r \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin{2\pi tN\cdot|r|)}{t}\right)\\
+               =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_r \frac{\sin{2\pi tN\cdot|r|)}{t}\right).
+            \end{align}
         </div>
     </div>
 
