@@ -88,6 +88,7 @@
             <center>
             \(\text{&#35 } p\)-mines \(\le N =\text{&#35}\lhd{p}\)-primes \(\le N - \text{&#35} \lhd{p}\)-primes \(\displaystyle\le \left\lfloor\frac{1}{p}\cdot N\right\rfloor\).
             </center>
+            <br>
             To conduct the descent, one represents the number of \(p\)-primes below \(N\) as the difference between two groups of \(\lhd{p}\)-primes; then represents each of those 
             groups as the difference between two groups of \(\lhd^2{p}\)-primes, and so on until the number of \(p\)-primes below \(N\) is presented solely in terms of integers.
             To find the number of integers below each bound \(x\), simply floor \(x\).
@@ -100,11 +101,19 @@
             This means that the sum of all elements in a tier is the same for each tier. Then summing all sixteen elements in the fifth tier of the tree yields the number 
             of \(7\)-primes below \(65\); that is,
             <center>
-            \(\text{&#35 } p\)-mines \(\le N =65-32-21+10-13+6+4-2-9+4+3-1+1-0-0+0=15.\)
+            \(\text{&#35 } 7\)-mines \(\le 65 =65-32-21+10-13+6+4-2-9+4+3-1+1-0-0+0=15.\)
             </center>
+            <br>
             This is confirmed by the animation; at its end, there are \(15\) rectangles remaining.
         </p>
-
+        <hr>
+        <h3> An algebraic expression for \(\text{&#35 } p\)-mines \(\le N\) </h3>
+        <p>
+            Firstly, note that floored terms are only ever multiplied by unit fractions.
+            This renders the nested floors in the final tier of the tree diagram redundant; only the outermost brackets are needed.
+            
+            
+        </p>
     </div>
 
 
