@@ -31,7 +31,7 @@ h2 {
 .menu {
     float: left;
     text-align: center;
-    width: 30%;
+    width: 100%;
 }
 
 .menu a {
@@ -43,7 +43,7 @@ h2 {
 
 .main {
   float: right;
-  width: 70%;
+  width: 100%;
   padding: 0px 20px;
 }
 
