@@ -28,8 +28,7 @@
 
 <div style="overflow:auto">
 
-    <div class="main" id="post0">
-        \(\newcommand{\lf}{\left\lfloor}\newcommand{\rf}{\right\rfloor}\newcommand{\sign}{\text{sign}}\)
+    <div class="main">
         <h2>Descent in prime sieves</h2>
         <p>
             The following animation was made with the <code onclick="document.location='https://www.manim.community'">manim</code> library for Python.
@@ -47,6 +46,7 @@
             \begin{equation} \tag{2}
             \forall k' &lt p, k\not\mid n \land p\mid n.
             \end{equation}
+            Be aware that throughout this blog I use the superscript prime symbol \(\prime\) to denote that a variable only assumes prime values; in equations (1) and (2) this applies to the variable \(k\).
             <br><br>
             
             To discuss descent and explain the above animation, I need to express the highest prime below \(p\) and the lowest prime above \(p\). These can
@@ -57,7 +57,7 @@
             If \(n\) is a \(p\)-prime where \(n\le N\) and \(p\rhd &gt \sqrt{N}\), then \(n\) is prime. The lowest \(p\)-mine other than \(p\) is always \(p^2\),
             as lower multiples of \(p\) must be divisible by smaller primes. That is, all \(k'&gt \sqrt{N}\) have no composite mines below \(N\), so it is enough to remove
             \(k\)-mines for \(k' \le \sqrt{N}\) to leave only primes remaining. 
-            In the animation above, \(N=65\) and all the \(7\)-primes below \(N\) are prime. <br><br>
+            In the animation above, \(N=65\) and all the \(7\)-primes below \(N\) are prime. <br>\(\newcommand{\lf}{\left\lfloor}\newcommand{\rf}{\right\rfloor}\newcommand{\sign}{\text{sign}}\)
            
             
             It is clear from the definitions that all \(p\)-primes are \(\lhd{p}\)-primes and not \(p\)-mines.
@@ -96,9 +96,9 @@
         
         
         
-        <h3> An algebraic expression for &#35 p-mines &#8804 N </h3>
+        <h3> A formula to determine the number of p-mines &#8804 N </h3>
         <p>
-            Let \(\rho(p, N)\) be a function returning the number of \(p\)-mines less than or equal to \(N\). The aim of this section is to find an algebraic expression for \(\rho\). To begin, consider \(\rho(7, 65)\) as a specific case; regard it as the sum of all elements of the fifth tier of the tree diagram in Figure 1.
+            Let \(\rho(p, N)\) be a function returning the number of \(p\)-mines less than or equal to \(N\). The aim of this section is to find a mathematical expression for \(\rho\). To begin, consider \(\rho(7, 65)\) as a specific case; then regard it as the sum of all elements of the fifth tier of the tree diagram in Figure 1.
             Firstly, note that floored terms are only ever multiplied by unit fractions.
             This renders the nested floors in the final tier of the tree diagram redundant; only the outermost brackets are needed.
             
@@ -123,17 +123,18 @@
             \begin{equation} \tag{3}
                 \sum_r r=\prod_{k'=2}^{p}\left(1-\frac{1}{k}\right),
             \end{equation}
-            then the \(\rho(p, N)\) is given by \(\sum_r \sign(r) \lf |r|\cdot N\rf\). Using the definition \(\lf x\rf = x - \{x\}\), where
+            then the \(\rho(p, N)\) is given by \(\sum_r \sign(r) \cdot\lf |r|\cdot N\rf\). Using the definition \(\lf x\rf = x - \{x\}\), where
             \(\{x\}\) denotes the fractional part of \(x\), we have:
         </p>
         <div class='formula'>
             \begin{align}
-                \sum_r \sign(r) \lf |r| \cdot N\rf &= \sum_r rN - \sum_r \sign(r)\{|r| \cdot N\}\\
-                                                          &= N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\{|r| \cdot N\}
+                \rho(p, N)&=\sum_r \sign(r) \cdot\lf |r| \cdot N\rf\\ 
+            &= \sum_r rN - \sum_r \sign(r)\cdot\{|r| \cdot N\}\\
+                                                          &= N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\cdot\{|r| \cdot N\}
             \end{align}
         </div>
         <p>
-            Then, using the Fourier series expansion
+            Using the Fourier series expansion
         </p>
         <div class='formula'>
             \[
@@ -141,12 +142,12 @@
             \]
         </div>
         <p>
-            the formula can be more analytically expressed as
+            \(\rho\) can be more analytically expressed as
         </p>
         <div class='formula'>
             \begin{align}
-                \rho(p,N)=&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\left(\frac{1}{2} - \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}\right)\\
-               =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \frac{1}{2}\cdot\sum_r \sign(r) + \frac{1}{\pi}\cdot\sum_r \sign(r)\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}.
+                \rho(p,N)=&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \sum_r \sign(r)\cdot\left(\frac{1}{2} - \frac{1}{\pi}\cdot\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}\right)\\
+               =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) - \frac{1}{2}\cdot\sum_r \sign(r) + \frac{1}{\pi}\cdot\sum_r \sign(r)\cdot\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}.
             \end{align}
         </div>
         <p>
@@ -154,8 +155,8 @@
         </p>
         <div class='formula'>
             \begin{align}
-                \rho(p, N)=&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_r \sign(r)\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}\\
-               =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_r \sign(r)\frac{\sin(2\pi tN\cdot|r|)}{t}.
+                \rho(p, N)=&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_r \sign(r)\cdot\sum_{t=1}^{\infty} \frac{\sin(2\pi tN\cdot|r|)}{t}\\
+               =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_r \sign(r)\cdot\frac{\sin(2\pi tN\cdot|r|)}{t}.
             \end{align}
         </div>
         <p>
@@ -171,12 +172,21 @@
         </p>
         <div class='formula'>
             \begin{align}
-               \rho(p, N)=&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_r \sign(r) \sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN\cdot|r|)^{2n+1}}{t\cdot(2n+1)!}\\
-              =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN)^{2n+1}}{t\cdot(2n+1)!} \sum_r \sign(r)\cdot |r|^{2n+1}\\
+               \rho(p, N)=&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_r \sign(r) \cdot\sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN\cdot|r|)^{2n+1}}{t\cdot(2n+1)!}\\
+              =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN)^{2n+1}}{t\cdot(2n+1)!}\cdot \sum_r \sign(r)\cdot |r|^{2n+1}\\
               =&N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN)^{2n+1}}{t\cdot(2n+1)!}\cdot \prod_{k'=2}^p \left(1-\frac{1}{k^{2n+1}}\right)
             \end{align}
         </div>
+        <p>
+            Thus we obtain the equation
+        </p>
+        <div class='formula'>
+            \begin{equation}\tag{4}
+                \rho(p, N)=N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN)^{2n+1}}{t\cdot(2n+1)!}\cdot \prod_{k'=2}^p \left(1-\frac{1}{k^{2n+1}}\right)
+            \end{equation}
+        </div>
     </div>
+    
 
 
     <!-- get menu -->
