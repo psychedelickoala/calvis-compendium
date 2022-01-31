@@ -12,7 +12,7 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Limits of sieving methods</title>
+        <title>Repeating sets of modular congruencies</title>
 
         <!-- Load external CSS styles -->
         <link rel="stylesheet" href="styles.css">
@@ -34,29 +34,29 @@
 <div style="overflow:auto">
 
     <div class="main" id="post0">
-        <h2> The limits of sieving methods </h2>
+        <h2> How overlapping modular functions behave </h2>
         <p>
-            Most of the following mathematics was developed in response to Hardy and Littlewood's prime k-tuple conjecture.
-            The definition of the conjecture that I had been using can be found <u onclick="document.location='prime-k-tuple.html'">here</u>.
-            In this post I aim to provide lower bounds for the functions \(\tau\) and \(\upsilon\). Let \(d(N)\) denote the density of primes below \(N\). The
-            following quotes are from my <u onclick="document.location='mertens-theorem-sieve-theory.html'">page on Mertens' Theorem</u>.
-            
-            <blockquote cite="mertens-theorem-sieve-theory.html">
-            Consider the natural numbers from \(1\) to \(N\) inclusive. 
-            Removing all multiples of each prime \(p\) for which \(2 \le p\le \sqrt{N}\) leaves only primes remaining.
-            Note that \(1\) is considered prime. Let \(R_p(N)\) return the ratio
-            
-            \[
-                \frac{\mid\{ n \text{ s.t. } n\le N \land \forall k'\le p, k\not\mid n\}\mid}{\mid\{n\text{ s.t. } n\le N \land \forall k' &lt p, k\not\mid n\}\mid};
-            \]
-            
-            then the product \(\prod_{p'=2}^{\sqrt{N}}R_p(N)\) is less than \(d(N)\). This algorithm removes primes below \(\sqrt{N}\), as they are multiples of themselves,
-            but leaves all other primes below \(N\). 
-            Then the prime number theorem implies that \(\pi(\sqrt{N})=o(\pi(N))\), so that
-            \[
-                \prod_{p'=2}^{\sqrt{N}} R_p(N) \sim d(N).
-            \]
-            </blockquote>
+            Let each natural number \(n\) be assigned a corresponding set \(M(n, p)\) such that \(M(n, p)=\{n\bmod{2}, n\bmod{3}, n\bmod{5}, ..., n\bmod{p}\}\) and \(p\) is a prime.
+            For natural \(x\) and \(y\), \(M(x, p)=M(y, p)\) if and only if
+            \begin{equation} \tag{1}
+            x = y + z\cdot \prod_{k'=2}^{p} k
+            \end{equation}
+            where \(z\) is an integer. <br><br>
+
+            For all \(k'\le p\), \(k\) divides \(z\cdot \prod_{k'=2}^{p} k\). It follows that if equation \(1\) holds for \(x\) and \(y\) then \(x\equiv y\bmod{k}\) for all \(k'\le p\),
+            so that \(M(x, p)=M(y, p)\). The converse is that \(M(x, p)=M(y, p)\) implies equation \(1\) and we can prove this with <em>reductio ad absurdum</em>.
+            Suppose there exist \(x, y\) where \(M(x, p)=M(y,p)\) but the difference between \(x\) and \(y\) is not \(z\cdot \prod_{k'=2}^{p} k\). Instead let the difference be \(d\).
+            In general, if \(M(x, p)=M(y, p)\) then \(M(x+a, p)=M(y+a,p)\) given \(x+a\) and \(y+a\) are natural numbers. We define \(x&lt y\) so that \(y=x+d\) and
+            \(M(x, p)=M(x+d, p)\) and we can add and subtract constants to show that for all natural \(n\), \(M(n, p)=M(n+d, p)\). This means that \(M(0, p)=M(d, p)\) which means that
+            for all \(k'\le p\), \(d\bmod{k}=0\). But we have already stated that \(d\) cannot be expressed as \(z\cdot \prod_{k'=2}^{p} k\), so this is absurd. So we can conclude that
+            there do not exist \(x, y\) satisfying \(M(x, p)=M(y, p)\) but not equation \(1\). <br><br>
+
+            What this means is that for each prime \(p\), \(M(n, p\) cycles as \(n\) increases and the period of those cycles is \(prod_{k'=2}^{p} k\). Going back to the definition
+            \(M(n, p)=\{n\bmod{2}, n\bmod{3}, n\bmod{5}, ..., n\bmod{p}\}\), we can see that the number of distinct possible such sets is \(2 \times 3 \times 5 \times ... \times p\),
+            equal to the period of the cycle. Since each \(n\) in the cycle has a unique set \(M(n, p)\), every possible set can be attributed to exactly one \(n\) in the cycle. For example,
+            if I choose \(p=7\), and two numbers with a difference of \(2\times 3\times 5\times 7=210\) such as \(57\) and \(267\), and a particular set \(M(n, p)\), like \(\{1, 0, 3, 6\}\), there
+            will be one \(n\) between the two numbers with that corresponding set. In this case, \(n = 153\).
+
         </p>
         
     </div>
