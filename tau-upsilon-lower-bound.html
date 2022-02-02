@@ -58,9 +58,18 @@
             will be one \(n\) between the two numbers with that corresponding set. In this case, \(n = 153\).<br><br>
 
             The general case of this is that for any set \(K\) of natural numbers \(\{k_1, k_2, k_3, ..., k_t\}\), the set \(M(n, K)\), defined as
-            \(\{n\bmod{k_1}, n\bmod{k_2}, ..., n\bmod{k_t}\}\), is cyclic and the period is the greatest common divisor of all elements in \(K\). Then any function based on
-            modular congruencies to \(k\) in \(K\) are similarly periodic. Such functions include \(\sum_{s=1}^{t} n\bmod{k_s}\) and \(\sum\sum_{s=1}^{t}\{\frac{n}{k_s}\}\) where
-            \(\{x\}\) denotes the fractional part of \(x\).
+            \(\{n\bmod{k_1}, n\bmod{k_2}, ..., n\bmod{k_t}\}\), is cyclic and the period is the greatest common divisor of all elements in \(K\). Then any functions based on
+            modular congruencies to \(k\) in \(K\) are similarly periodic. Such functions include \(\sum_{s=1}^{t} n\bmod{k_s}\) and \(\sum_{s=1}^{t}\{\frac{n}{k_s}\}\) where
+            \(\{x\}\) denotes the fractional part of \(x\).<br>
+
+            <hr>
+
+            So for a set of rules about modular congruencies of \(n\), we can tell exactly how many \(n\) between \(1\) and \(\gcd(K)\) obey the rules. For example, set
+            \(K:=\{2, 3, 5, 7\}\) so that \(\gcd(K)=210\). Suppose we want to find the number of \(n\) that are not divisible by any \(k\) in \(K\). This can be rewritten as
+            \(0\notin M(n, K)\). The proportion of \(n\le 210\) satisfying this requirement is:
+            \[
+                \frac{2-1}{2}\times\frac{3-1}{3}\times\frac{5-1}{5}\times\frac{7-1}{7}=\frac{48}{210}
+            \]
 
         </p>
         
