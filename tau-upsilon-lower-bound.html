@@ -55,7 +55,12 @@
             \(M(n, p)=\{n\bmod{2}, n\bmod{3}, n\bmod{5}, ..., n\bmod{p}\}\), we can see that the number of distinct possible such sets is \(2 \times 3 \times 5 \times ... \times p\),
             equal to the period of the cycle. Since each \(n\) in the cycle has a unique set \(M(n, p)\), every possible set can be attributed to exactly one \(n\) in the cycle. For example,
             if I choose \(p=7\), and two numbers with a difference of \(2\times 3\times 5\times 7=210\) such as \(57\) and \(267\), and a particular set \(M(n, p)\), like \(\{1, 0, 3, 6\}\), there
-            will be one \(n\) between the two numbers with that corresponding set. In this case, \(n = 153\).
+            will be one \(n\) between the two numbers with that corresponding set. In this case, \(n = 153\).<br><br>
+
+            The general case of this is that for any set \(K\) of natural numbers \(\{k_1, k_2, k_3, ..., k_t\}\), the set \(M(n, K)\), defined as
+            \(\{n\bmod{k_1}, n\bmod{k_2}, ..., n\bmod{k_t}\}\), is cyclic and the period is the greatest common divisor of all elements in \(K\). Then any function based on
+            modular congruencies to \(k\) in \(K\) are similarly periodic. Such functions include \(\sum_{s=1}^{t} n\bmod{k_s}\) and \(\sum\sum_{s=1}^{t}\{\frac{n}{k_s}\}\) where
+            \(\{x\}\) denotes the fractional part of \(x\).
 
         </p>
         
