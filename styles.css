@@ -3,7 +3,7 @@
 body {
     font-family: "Georgia", serif;
     background-color:white;
-    color: #000000;
+    color: black;
     text-align: justify;
     
 
@@ -67,6 +67,39 @@ h1 {
     font-family: "Georgia", serif;
     font-weight: normal;
 }
+
+.postPreview {
+    display: inline-block;
+    margin: 14px 7px;
+    border-style: solid;
+    border-color: #382E2C;
+}
+
+.postPreview a {
+    background-color: #897C9D;
+    color: white;
+    padding: 7px;
+    text-align:left;
+    font-size: 18px;
+    display: block;
+    margin: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: #382E2C;
+}
+
+.postPreview a:hover {
+    background-color: white;
+    color: #382E2C;
+    text-decoration: underline;
+}
+
+.postPreview p {
+    padding: 10px;
+    display: block;
+    margin: 0px;
+    text-align: justify;
+}
+
 
 /* Add a black background color to the top navigation */
 .topnav {
