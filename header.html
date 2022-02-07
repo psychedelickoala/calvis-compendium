@@ -3,8 +3,23 @@
 <html>
 <head>
 <!-- Load external CSS styles -->
+
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+        <meta charset="utf-8">
+
+        <!-- MathJax -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
     <!-- header -->
@@ -22,11 +37,17 @@
   <div class="search-container">
     <form id="searchbar">
       <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
     </form>
+      <button onclick="searchSite()"><i class="fa fa-search"></i></button>
   </div>
 </div>
 
+<div id="search-results"></div>
+<script>
+    document.getElementById("search-results").innerHTML = aaaaaa;
+ </script>
+
+<div id="ghost-menu"></div>
 
 <script>
 function myFunction() {
@@ -37,5 +58,30 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
+function searchSite() {
+    var x = document.getElementById("searchbar");
+    var text = "";
+    var i;
+    for (i = 0; i < x.length ;i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    $(function(){
+        $("#ghost-menu").load("menu.html");
+        });
+
+    var posts = document.getElementsByClassName("postPreview");
+    var results = '';
+    /*for (i=0; i<posts.length; i++) {
+        if (posts[i].name.includes(text)) {
+            posts[i].remove()
+    }*/
+    document.getElementById("search-results").innerHTML = posts[0].name;
+}
+
 </script>
+
+
+
+
 </html>
