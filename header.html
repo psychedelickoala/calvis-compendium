@@ -34,15 +34,12 @@
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
-  <div class="search-container">
-    <form id="searchbar">
-      <input type="text" placeholder="Search.." name="search">
-    </form>
-      <button onclick="searchSite()"><i class="fa fa-search"></i></button>
+  <div class="search-container" id="searchbar-holder">
+      <button onclick="buildSearchbar()"><i class="fa fa-search"></i></button>
   </div>
 </div>
 
-<div id="search-results"></div>
+<p id="search-results"></p>
 
 
 <div id="ghost-menu"></div>
