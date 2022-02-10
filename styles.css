@@ -5,6 +5,7 @@ body {
     background-color:white;
     color: black;
     text-align: justify;
+
     
 
 }
@@ -25,6 +26,7 @@ h2 {
   background-color: #897C9D;
   color:white;
   padding: 7px;
+  margin: 0px 20px;
   text-align:left;
   font-size: 18px;
 }
@@ -33,19 +35,27 @@ h2 {
     float: left;
     text-align: center;
     width: 30%;
+    background-color: white;
 }
 
 .menu a {
   padding: 8px;
-  margin-top: 7px;
+  margin-bottom: 7px;
   display: block;
   width: 100%;
 }
 
 .main {
   float: right;
-  width: 70%;
+  padding: 0px 0px;
+}
+
+.main p {
   padding: 0px 20px;
+}
+
+.main hr {
+    margin: 0px 20px;
 }
 
 a:link, a:visited {

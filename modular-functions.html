@@ -22,7 +22,13 @@
     <body>
 
     
-    <!-- header -->
+
+
+
+<div style="overflow:auto">
+
+    <div class="main" id="post0">
+        <!-- header -->
     <div id="header-placeholder"></div>
     <script>
         $(function(){
@@ -30,10 +36,6 @@
         });
     </script>
 
-
-<div style="overflow:auto">
-
-    <div class="main" id="post0">
         <h2> The behaviour of overlapping modular functions </h2>
         <p>
             Let each natural number \(n\) be assigned a corresponding set \(M(n, p)\) such that \(M(n, p)=\{n\bmod{2}, n\bmod{3}, n\bmod{5}, ..., n\bmod{p}\}\) and \(p\) is a prime.
@@ -60,9 +62,10 @@
             The general case of this is that for any set \(K\) of natural numbers \(\{k_1, k_2, k_3, ..., k_t\}\), the set \(M(n, K)\), defined as
             \(\{n\bmod{k_1}, n\bmod{k_2}, ..., n\bmod{k_t}\}\), is cyclic and the period is the greatest common divisor of all elements in \(K\). Then any functions based on
             modular congruencies to \(k\) in \(K\) are similarly periodic. Such functions include \(\sum_{s=1}^{t} n\bmod{k_s}\) and \(\sum_{s=1}^{t}\{\frac{n}{k_s}\}\) where
-            \(\{x\}\) denotes the fractional part of \(x\).<br>
+            \(\{x\}\) denotes the fractional part of \(x\).<br> </p>
 
             <hr>
+        <p>
 
             So for a set of rules about modular congruencies of \(n\), we can tell exactly how many \(n\) between \(1\) and \(\gcd(K)\) obey the rules. For example, set
             \(K:=\{2, 3, 5, 7\}\) so that \(\gcd(K)=210\). Suppose we want to find the number of \(n\) that are not divisible by any \(k\) in \(K\). This can be rewritten as
@@ -70,7 +73,7 @@
             \[
                 \frac{2-1}{2}\times\frac{3-1}{3}\times\frac{5-1}{5}\times\frac{7-1}{7}=\frac{48}{210}
             \]
-
+        </p>
         </p>
         
     </div>

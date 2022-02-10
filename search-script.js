@@ -1,3 +1,5 @@
+var site;
+
 function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -8,6 +10,7 @@ function myFunction() {
 }
 
 function buildSearchbar() {
+    site = window.location.href
     var x = document.getElementById("searchbar");
     if (x===null) {
         $(function(){
@@ -24,6 +27,10 @@ function searchSite() {
     var i;
     for (i = 0; i < x.length ;i++) {
         text += x.elements[i].value;
+    }
+    if (text==="") {
+        document.location=site;
+        return true;
     }
     var terms = text.split(" ");
     var posts = document.getElementsByClassName("postPreview");
