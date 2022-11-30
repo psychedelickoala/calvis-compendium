@@ -187,6 +187,13 @@
                 \rho(p, N)=N\prod_{k'=2}^p \left(1-\frac{1}{k}\right) + \frac{1}{\pi}\cdot\sum_{t=1}^{\infty}\sum_{n=0}^{\infty} \frac{(-1)^n (2\pi tN)^{2n+1}}{t\cdot(2n+1)!}\cdot \prod_{k'=2}^p \left(1-\frac{1}{k^{2n+1}}\right)
             \end{equation}
         </div>
+        <hr>
+        <p>
+            In the previous section, I neglected to mention that the Fourier expansion of \(\{x\}\) is inaccurate if \(x\) is an integer. This is because \(\sin(2πtx)\) is \(0\) if
+            \(x\) and \(t\) are integers, so the Fourier series for \(\{x\}\) returns \(\frac{1}{2}\)  for integer values of \(x\), even though it approaches \(1\) from the left and \(0\) from
+            the right. As such, the limit is undefined; hence formula \(4\) is only valid for non-integer values of \(N\).
+
+        </p>
     </div>
 
 </div>
