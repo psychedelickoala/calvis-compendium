@@ -17,6 +17,13 @@ img {
 
 }
 
+figure {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
 header {
     padding: 30px;
     text-align: center;
