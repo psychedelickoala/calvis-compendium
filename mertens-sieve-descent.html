@@ -33,24 +33,29 @@
 
         <h2>How prime sieves relate to Mertens' theorem</h2>
         <p>
-            A trivial consequence of <a href="mertens-theorem-sieve-theory.html">Mertens' Theorem</a> is:
+            A trivial consequence of <u onclick="document.location='prime-k-tuple.html'">Mertens' Theorem</u> is:
         </p>
         <div class="formula">
             \begin{equation}\tag{1}
-                \pi (N) \sim \frac{e^{\gamma}}{2} N \prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right),
+                \pi (N) \sim \frac{e^{\gamma}}{2} N \prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right)
             \end{equation}
         </div>
         <p>
-            and, as \(\frac{1}{2}e^{\gamma} &lt 1\) (since \(\frac{1}{2}e^{\gamma}\approx 0.890522...\)), Mertens' Theorem implies:
+            and, as \(\frac{1}{2}e^{\gamma} &lt 1\) (\(\frac{1}{2}e^{\gamma}\approx 0.890522...\)), Mertens' Theorem implies:
         </p>
         <div class="formula">
             \begin{equation}\tag{2}
-                \pi (N) &lt N \prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right),
+                \pi (N) &lt N \prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right)
             \end{equation}
         </div>
         <p>
-            in some sense as \(N\to\infty\).
+            in some sense as \(N\to\infty\). This contradicts intuition that \(\prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right)\) should somewhat accurately approximate \(\pi(N)\). Consider how the sieve of Eratosthenes removes multiples of \(2\), \(3\), \(5\) etc. up to \(sqrt{N}\), leaving only primes below \(N\), as pictured below:
         </p>
+        <figure>
+            <img src="/media/soe-anim.gif" alt="sieve of eratosthenes animation">
+            <figcaption>Animation from Wikipedia https://commons.wikimedia.org/wiki/File:Animation_Sieve_of_Eratosth.gif</figcaption>
+        </figure>
+        
     </div>
 
 </div>
