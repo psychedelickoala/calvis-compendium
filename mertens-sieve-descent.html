@@ -33,7 +33,23 @@
 
         <h2>How prime sieves relate to Mertens' theorem</h2>
         <p>
-            hello
+            A trivial consequence of <a href="mertens-theorem-sieve-theory.html">Mertens' Theorem</a> is:
+        </p>
+        <div class="formula">
+            \begin{equation}\tag{1}
+                \pi (N) \sim \frac{e^{\gamma}}{2} N \prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right),
+            \end{equation}
+        </div>
+        <p>
+            and, as \(\frac{1}{2}e^{\gamma} &lt 1\) (since \(\frac{1}{2}e^{\gamma}\approx 0.890522...\)), Mertens' Theorem implies:
+        </p>
+        <div class="formula">
+            \begin{equation}\tag{2}
+                \pi (N) &lt N \prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right),
+            \end{equation}
+        </div>
+        <p>
+            in some sense as \(N\to\infty\).
         </p>
     </div>
 
