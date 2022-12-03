@@ -56,7 +56,7 @@
             <figcaption style="display:block;margin-left:auto;margin-right:auto;text-align: center;">Animation from Wikipedia <u onclick="document.location='https://commons.wikimedia.org/wiki/File:Animation_Sieve_of_Eratosth.gif'">https://commons.wikimedia.org/wiki/File:Animation_Sieve_of_Eratosth.gif</u></figcaption>
         </figure>
         <p>
-            One would expect \(\frac{1}{2}\) of the positive integers from \(1\) to \(120\) to not be divisible by \(2\), roughly \(\frac{2}{3}\) of these to also not be divisible by \(3\), about \(\frac{4}{5}\) of these to also not be divisible by \(5\), etc. From there, given that removing multiples of any primes below \(\sqrt{N}\) leaves almost all primes below \(N\) (which is true), one could expect to approximate \(\pi(N)\) as \(\prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right)\). However, as per equations \(1\) and \(2\), this approximation significantly and proportionally overestimates \(\pi(N)\). <br> <br>
+            One would expect \(\frac{1}{2}\) of the positive integers from \(1\) to \(120\) to not be divisible by \(2\), roughly \(\frac{2}{3}\) of these to also not be divisible by \(3\), about \(\frac{4}{5}\) of these to also not be divisible by \(5\), etc. From there, given that removing multiples of any primes below \(\sqrt{N}\) leaves almost all primes below \(N\) (which is true), one could expect to approximate \(\pi(N)\) as \(N\prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right)\). However, as per equations \(1\) and \(2\), this approximation significantly and proportionally overestimates \(\pi(N)\). <br> <br>
 
             To try to explain why the actual number of primes is lower than expected I'll be referring back to <u onclick="document.location='prime-sieves-infinite-descent.html'">this post</u> about a recursive property of the primes (sort of). But now to introduce some... idiosyncratic notation and terminology: let \(p\) always refer to a prime; let \(\lhd p\) be the prime before \(p\) and \(p\rhd\) be the prime after \(p\); then let the prime that is \(n\) primes before \(p\) be \(\lhd^n p\) (eg. \(\lhd^4 19 = 7\)) and let the prime \(n\) primes after \(p\) similarly be \(p\rhd^n\). Then, if a natural number \(n\) has no prime factors less than or equal to \(p\), let \(n\) be referred to as a '\(p\)-prime', and if \(p\) is the smallest prime factor of \(n\) then \(n\) is a '\(p\)-mine'. <br> <br>
 
@@ -68,9 +68,31 @@
             \end{equation}
         </div>
         <p>
-            since \(N - \sum_{p'=2}^{\sqrt{N}}(\text{number of }p\text{-mines}\leq N)\) will give you the number of \(\sqrt{N}\rhd\)-primes less than or equal to \(N\). And the \(\sqrt{N}\rhd\)-primes less than or equal to \(N\) are all prime, except for the number \(1\), and only exclude primes less than or equal to \(\sqrt{N}\), hence equation \(3\).
+            since \(N - \sum_{p'=2}^{\sqrt{N}}(\text{number of }p\text{-mines}\leq N)\) will give you the number of \(\sqrt{N}\rhd\)-primes less than or equal to \(N\). And the \(\sqrt{N}\rhd\)-primes less than or equal to \(N\) are all prime, except for the number \(1\), and only exclude primes less than or equal to \(\sqrt{N}\), hence equation \(3\). Then, by the less trivial Prime Number Theorem, \(\pi(N)-\pi(\sqrt{N})+1\sim \pi(N)\), so that
         </p>
-       
+        <div class="formula">
+            \begin{equation}\tag{4}
+                N - \sum_{p'=2}^{\sqrt{N}}(\text{number of }p\text{-mines}\leq N) \sim \pi(N).
+            \end{equation}
+        </div>
+        <p>
+            So then equation \(2\) can be reframed as saying that the \(N\prod_{p'=2}^{\sqrt{N}}\left(1-\frac{1}{p}\right)\) approximation for \(\pi(N)\) underestimates the total number of mines for \(p\leq \sqrt{N}\). Note that this approximation estimates the number of \(p\)-mines below \(N\) to be \(\frac{1}{p}\cdot N\prod_{k'=2}^{\lhd p}\left(1-\frac{1}{k}\right)\). The graph below shows \(p\) on the \(x\)-axis and the number of \(p\)-mines below \(10^9\) on the \(y\)-axis.
+        </p>
+        <img src="/media/mines-10e9.jpg" style="width:90%;">
+        <p>
+            In the graph above, \(\frac{1}{p}\cdot N\prod_{k'=2}^{\lhd p}\left(1-\frac{1}{k}\right)\) visibly underestimates the number of \(p\)-mines below \(10^9\) for most \(p\) below \(\sqrt{10^9}\approx 31622.78\), in particular for \(1163 &lt p &lt 20207\) (read from graph). <br> <br>
+
+            The recursive argument is as follows: as aforementioned, any \(\lhd p\)-prime multiplied by \(p\) will yield a \(p\)-prime; so to find all the \(p\)-mines below \(N\), multiply each \(\lhd p\)-prime less than or equal to \(\frac{N}{p}\) by \(p\). That is, the number of \(p\)-mines \(\leq N\) is equal to the number of \(\lhd p\)-primes \(\leq \frac{N}{p}\). Below is an animation illustrating this:
+        </p>
+        <video style="width:100%;" controls>
+            <source src="media\prime-sieve-qm.mp4" type="video/mp4">
+            Your browser doesn't support this video. Sorry!
+        </video>
+        <p>
+            It's also clear that the smallest \(\lhd p\)-primes are \(1\) and \(p\), as all natural numbers below \(p\) are divisible by some prime \(\leq \lhd p\). Consequently, the smallest \(p\)-mines are \(p\) and \(p^2\).
+        </p>
+
+
         
     </div>
 
